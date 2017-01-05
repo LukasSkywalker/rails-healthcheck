@@ -6,10 +6,6 @@ module Healthcheck
       ca = CheckAll.new(ActiveRecordCheck, FakeCheck)
       result = ca.test_all
       render html: result.html_safe
-    rescue StandardError => e
-      msg = e.message
-      m = "FAIL"
-      render html: m.html_safe
     end
   end
 end
