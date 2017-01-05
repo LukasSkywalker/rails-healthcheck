@@ -8,9 +8,7 @@ module Healthcheck
       render html: result.html_safe
     rescue StandardError => e
       msg = e.message
-      m = "FAIL #{msg}" <<
-        '<br />' <<
-        e.backtrace.reject { |l| l.index('healthcheck').nil? }.join('<br />')
+      m = "FAIL"
       render html: m.html_safe
     end
   end
